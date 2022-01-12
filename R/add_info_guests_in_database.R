@@ -31,7 +31,7 @@ add_info_guests_in_database <- function(info_to_add, data_guests) {
   
   data_guests_to_add  <- data_guests %>% 
     filter(name %in% names_guests_to_add) %>% 
-    select(name, type, table, announcement) %>% 
+    select(name, type, table) %>% 
     left_join(info_to_add,
               by = "name")
   

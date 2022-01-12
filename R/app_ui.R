@@ -31,17 +31,17 @@ app_ui <- function(request) {
                tabPanel(
                  title = "Lugar de la boda",
                  mod_tab_place_ui("tab_place_ui_1")
-               ),
-               
-               tabPanel(
-                 title = "Alojamiento",
-                 mod_tab_accommodation_ui("tab_accommodation_ui_1")
-               ),
-               
-               tabPanel(
-                 title = "Covid",
-                 mod_tab_covid_ui("tab_covid_ui_1")
-               )
+                )#,
+               # 
+               # tabPanel(
+               #   title = "Alojamiento",
+               #   mod_tab_accommodation_ui("tab_accommodation_ui_1")
+               # )
+               # 
+               # tabPanel(
+               #   title = "Covid",
+               #   mod_tab_covid_ui("tab_covid_ui_1")
+               # )
                
                )
   )

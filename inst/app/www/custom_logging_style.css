@@ -85,6 +85,7 @@
     color: white; 
     background-color: rgb(141, 130, 183);
     border-color: rgb(141, 130, 183);
+    border-width: thin;
 }
 
 #auth-go_auth:focus {

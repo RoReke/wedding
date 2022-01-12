@@ -163,4 +163,9 @@ html,body{
 
 .shiny-notification {
     font-family: 'Bauer Bodoni Std 1';
+    font-size: 20px;
+    color: black; 
+    background-color: rgb(235, 235, 235);
+    border-color: rgb(141, 130, 183);
+    border-width: medium;
 }

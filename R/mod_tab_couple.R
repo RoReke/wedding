@@ -20,7 +20,7 @@ mod_tab_couple_ui <- function(id){
              # Image fond d'écran
              tags$div(class = "landing-block background-content",
                       
-                      img(src = glue::glue("www/image.png"))
+                      img(src = 'image.png')
                       
              ),
              

@@ -13,6 +13,13 @@ run_app <- function(
   ...
 ) {
   
+  shinymanager::set_labels(
+    language = "es",
+    "Please authenticate" = "Login",
+    "Username:" = "Usuario:",
+    "Password:" = "Constraseña:"
+  )
+  
   with_golem_options(
     app = shinyApp(
       ui = shinymanager::secure_app(

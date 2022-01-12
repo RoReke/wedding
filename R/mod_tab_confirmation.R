@@ -30,13 +30,17 @@ mod_tab_confirmation_ui <- function(id){
       
       sidebarPanel(
         
-        width = 5,
-        
-        selectInput(
+        width = 6,
+        selectizeInput(
           inputId = ns("name"),
-          label = "Nombre: ",
-          choices = c("Guada", "Rodrigo"),
-          selected = "Elija su nombre en la lista..."
+          label   = HTML("Nombre:"),
+          choices = NULL,
+          selected  = character(0),
+          options = list(
+            placeholder = "Elegir nombre...",
+            onInitialize = I('function() { this.setValue(""); }'),
+            maxItems    = 1
+          )
         ),
 
         tags$br(style = "line-height: 20px"),
@@ -50,6 +54,11 @@ mod_tab_confirmation_ui <- function(id){
           inputId = ns("special_diet"),
           label = "Dieta especial (alergias/intolerancias alimentarias, dieta para embarazadas, etc.))",
           placeholder = "Indique aquí los planes"
+        ),
+        selectInput(
+          inputId = ns("principal"),
+          label = "Elija su opción de menú principal: ",
+          choices = c("Fideos", "Arroz")
         ),
         fileInput(
           inputId = ns("file"), 
@@ -78,7 +87,7 @@ mod_tab_confirmation_ui <- function(id){
       
       mainPanel(
         
-        width = 7,
+        width = 6,
         
         h1("Resumen de su información", style = "font-size:20px"),
         
@@ -132,20 +141,20 @@ mod_tab_confirmation_server <- function(id, r_global){
     
     r_local$info <- tibble(
       name = character(),
-      special_diet = character()
+      special_diet = character(),
+      menu_dinner = character()
       )
     
     # Update input list guest according to data
-    # observeEvent(TRUE, once = TRUE, {
-    #   
-    #   updateSelectInput(
-    #     session = session, 
-    #     inputId = "name", 
-    #     choices = c("Elige de la lista a la persona", r_global$data_guests %>% distinct(name) %>% pull()),
-    #     selected = "Elija su nombre en la lista..."
-    #     )
-    #   
-    # })
+    observeEvent(TRUE, once = TRUE, {
+
+      updateSelectizeInput(
+        session = session,
+        inputId = "name",
+        choices = c(r_global$data_guests %>% distinct(name) %>% pull())
+        )
+
+    })
     
     # Find info about guest in data and update selectinput menu according to guest type adult/teen/kid
     # observeEvent(input$name, ignoreInit = TRUE, {
@@ -201,16 +210,25 @@ mod_tab_confirmation_server <- function(id, r_global){
       
       r_local$name <- input$name
       r_local$special_diet <- input$special_diet
-     
+      r_local$principal <- input$principal
+      
       r_local$info <- r_local$info %>% 
         add_row(
           name = r_local$name,
-          special_diet = r_local$special_diet
+          special_diet = r_local$special_diet,
+          menu_dinner    = r_local$principal
           )
       
+      googledrive::drive_upload(
+        media = input$file$datapath,
+        path = "Certificados Vacuna",
+        name = glue::glue("Certificado_{r_local$name}.pdf")
+      ) 
+      
+      reset("file")
       reset("name")
       reset("special_diet")
-      
+      reset("principal")
     })
     
     # Delete last line
@@ -227,8 +245,8 @@ mod_tab_confirmation_server <- function(id, r_global){
       
       r_local$info %>% 
         rename(
-          stats::setNames(c("name", "special_diet"), 
-                          c("Nombre", "Dieta Especial") 
+          stats::setNames(c("name", "special_diet", "menu_dinner"), 
+                          c("Nombre", "Dieta Especial", "Menú Principal") 
           )
         )
     })
@@ -270,17 +288,12 @@ mod_tab_confirmation_server <- function(id, r_global){
       # Show notification
       showNotification(
         ui = "Su información ha sido enviada a los novios.",
-        type = "default"
+        type = "message"
         )
       # Upload the new database
       temp_dir <- tempdir()
       readr::write_csv(r_global$data_guests, glue::glue(temp_dir, "/new_data_guests.csv"))
       googledrive::drive_update("data_invitados", glue::glue(temp_dir, "/new_data_guests.csv"))
-      googledrive::drive_upload(
-        media = input$file$datapath,
-        path = "Certificados Vacuna",
-        name = glue::glue("Certificado_{input$name}.pdf")
-      ) 
       
     })
     
