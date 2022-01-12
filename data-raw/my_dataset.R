@@ -14,7 +14,7 @@ usethis::use_data(data_expenses_example, overwrite = TRUE)
 
 ## data_guests_example
 data_guests_example <- tibble(
-  name = c("David", "Margot", "Pierre", "Marie"),
+  name = c("Rodrigo", "Guada", "Pierre", "Marie"),
   type = c("Adult", "Adult", "Kid", "Teen"),
   table = c(1, 1, 2, 2),
   announcement = c("Yes", NA_character_, "Yes", NA_character_),

@@ -12,12 +12,14 @@ run_app <- function(
   enableBookmarking = NULL,
   ...
 ) {
+  
   with_golem_options(
     app = shinyApp(
       ui = shinymanager::secure_app(
         ui = app_ui, 
+        language = "es",
         head_auth = golem_add_external_resources(),
-        background  = glue::glue("url(\'../www/", Sys.getenv("IMG_BACKGROUND"), "\') no-repeat center top fixed;")
+        background  = glue::glue("url(\'image.png", "\') no-repeat center top fixed;")
         ),
       server = app_server,
       onStart = onStart,

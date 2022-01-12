@@ -61,8 +61,8 @@
 
 #auth-user_id:focus {   
   font-family: 'Bauer Bodoni Std 1';
-  border-color: rgb(116, 87, 80);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+  border-color: rgb(139, 131, 203);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(139, 131, 203);
   outline: 0 none;
 }
 
@@ -73,8 +73,8 @@
 
 #auth-user_pwd:focus {
   font-family: 'Bauer Bodoni Std 1';
-  border-color: rgb(116, 87, 80);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+  border-color: rgb(139, 131, 203);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(139, 131, 203);
   outline: 0 none;
 }
 
@@ -83,8 +83,8 @@
     font-family: 'Bauer Bodoni Std 1'; 
     font-size: 15px;
     color: white; 
-    background-color: rgb(116, 87, 80);
-    border-color: rgb(116, 87, 80);
+    background-color: rgb(141, 130, 183);
+    border-color: rgb(141, 130, 183);
 }
 
 #auth-go_auth:focus {
