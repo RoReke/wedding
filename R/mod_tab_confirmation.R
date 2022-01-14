@@ -5,7 +5,8 @@
 #' @param id,input,output,session Internal parameters for {shiny}.
 #' 
 #' @importFrom readr read_csv locale
-#'
+#' @import shinyvalidate
+#' @import shinyjs
 #' @noRd 
 #'
 #' @importFrom shiny NS tagList 
@@ -208,6 +209,15 @@ mod_tab_confirmation_server <- function(id, r_global){
     # Click on save choice / add info to sumamry tibble
     observeEvent(input$save_info_guest, {
       
+      iv$enable()
+      if (!iv$is_valid()) {
+        showNotification(
+          ui = "Por favor complente el formulario",
+          type = "error"
+        )
+        req(FALSE)
+      }
+      
       r_local$name <- input$name
       r_local$special_diet <- input$special_diet
       r_local$principal <- input$principal
@@ -225,6 +235,7 @@ mod_tab_confirmation_server <- function(id, r_global){
         name = glue::glue("Certificado_{r_local$name}.pdf")
       ) 
       
+      iv$disable()
       reset("file")
       reset("name")
       reset("special_diet")
@@ -297,7 +308,14 @@ mod_tab_confirmation_server <- function(id, r_global){
       
     })
     
+    #validacion 
+    iv <- InputValidator$new()
+    iv$add_rule("name", sv_required(message = ""))
+    iv$add_rule("principal", sv_required())
+    iv$add_rule("file", sv_required(message = "Ingresar Certificado"))
+    
   })
+  
 }
     
 ## To be copied in the UI

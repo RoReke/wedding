@@ -21,8 +21,8 @@ mod_tab_place_ui <- function(id){
         width = 6,
         tags$div(img(src = "www/bellenoe.jpg"), style = "text-align: center"),
         tags$br(style = "line-height: 20px"),
-        tags$p("Manoir de Belle-No\u00eb", style = "font-family: \'Bauer Bodoni Std 1\'; letter-spacing:3px; text-align: center"),
-        tags$p("Dol-de-Bretagne", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+        tags$p("Chacra Taló", style = "font-family: \'Bauer Bodoni Std 1\'; letter-spacing:3px; text-align: center")#,
+        #tags$p("Dol-de-Bretagne", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
         ),
       
       column(
@@ -74,7 +74,7 @@ mod_tab_place_ui <- function(id){
       
       column(
         width = 6,
-        tags$div(img(src = "www/bellenoe_enfants.jpg"), 
+        tags$div(img(src = "www/chacratalo2.jpeg"), 
                  style = "text-align: center"),
       ),
       
@@ -104,9 +104,9 @@ mod_tab_place_server <- function(id, r_global){
       
       get_map_wedding(
         data_markers = tibble(
-          longitude = -1.7129955029636943, 
-          latitude = 48.53024518235586,
-          name = "Manoir de Belle-No\u00eb"),
+          longitude = -34.37904355083765,  
+          latitude = -59.0223298386258,
+          name = "Chacra Taló"),
         icon_markers = "heart"
       )
                             

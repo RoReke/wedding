@@ -26,7 +26,7 @@ run_app <- function(
         ui = app_ui, 
         language = "es",
         head_auth = golem_add_external_resources(),
-        background  = glue::glue("url(\'image.png", "\') no-repeat center top fixed;")
+        background  = glue::glue("url(\'image.png", "\') no-repeat top; height: 50%;")
         ),
       server = app_server,
       onStart = onStart,
