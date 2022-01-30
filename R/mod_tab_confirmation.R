@@ -146,6 +146,25 @@ mod_tab_confirmation_server <- function(id, r_global){
       menu_dinner = character()
       )
     
+    observeEvent(input$name, {
+      req(input$name)
+      type <- r_global$data_guests %>% filter(name == input$name) %>% pull(type)
+      if (type == "Kid") {
+        updateSelectInput(
+          session = session,
+          inputId = "principal",
+          choices = c("Menú Infantil: Milanesa con papas", "Arroz","Fideos"),
+          selected = character(0)
+        )
+      } else {
+        updateSelectInput(
+          session = session,
+          inputId = "principal",
+          choices = c("Arroz","Fideos"),
+          selected = character(0)
+        )
+      }
+    }, ignoreInit = TRUE)
     # Update input list guest according to data
     observeEvent(TRUE, once = TRUE, {
 
@@ -244,10 +263,8 @@ mod_tab_confirmation_server <- function(id, r_global){
     
     # Delete last line
     observeEvent(input$clean_last_info_guest, {
-      
-      n_lines <- nrow(r_local$info)
-      r_local$info <- r_local$info %>%
-        top_n(n = -(n_lines - 1))
+     
+      r_local$info <- r_local$info[-nrow(r_local$info),]
       
     })
     

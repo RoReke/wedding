@@ -24,14 +24,14 @@ app_ui <- function(request) {
                ),
                
                tabPanel(
-                 title = "Programa del día",
-                 mod_tab_schedule_ui("tab_schedule_ui_1")
-               ),
-               
-               tabPanel(
                  title = "Lugar de la boda",
                  mod_tab_place_ui("tab_place_ui_1")
-                )#,
+                ),
+               
+               tabPanel(
+                 title = "Obsequios",
+                 mod_tab_schedule_ui("tab_schedule_ui_1")
+               )
                # 
                # tabPanel(
                #   title = "Alojamiento",
