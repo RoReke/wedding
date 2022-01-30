@@ -28,7 +28,7 @@ mod_tab_couple_ui <- function(id){
              tags$div(class = "landing-block foreground-content",
                       tags$div(class = "foreground-text",
                                tags$h1("Guada & Ro", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:10px"),
-                               tags$p("Un gran poder conlleva una gran responsabilidad", style = "font-family: 'Old script'; font-size:50px; letter-spacing:5px"),
+                               tags$p("'The one where we get married...'", style = "font-family: 'MrsEavesItalic'; font-size:45px; letter-spacing:5px"),
                                tags$br(),
                                tags$p("26 marzo 2022", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:10px")
                       )
