@@ -11,6 +11,8 @@ mod_tab_place_ui <- function(id){
   
   ns <- NS(id)
   
+  url_map <- a("Link Google Map", href="https://www.google.com/maps/place/Chacra+Tal%C3%B3/@-34.3798936,-59.0225015,15z/data=!4m5!3m4!1s0x0:0xb320b7e9c1f9dac6!8m2!3d-34.3798936!4d-59.0225015")
+  
   tagList(
     
     tags$br(style = "line-height: 80px"),
@@ -19,10 +21,9 @@ mod_tab_place_ui <- function(id){
       
       column(
         width = 6,
-        tags$div(img(src = "www/bellenoe.jpg"), style = "text-align: center"),
+        tags$div(img(src = "www/bellenoe.jpg", height = "500px"), style = "text-align: center"),
         tags$br(style = "line-height: 20px"),
-        tags$p("Chacra Taló", style = "font-family: \'Bauer Bodoni Std 1\'; letter-spacing:3px; text-align: center")#,
-        #tags$p("Dol-de-Bretagne", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+        tags$p("Chacra Taló", style = "font-family: \'Bauer Bodoni Std 1\'; letter-spacing:3px; text-align: center")
         ),
       
       column(
@@ -30,17 +31,21 @@ mod_tab_place_ui <- function(id){
         align = "center",
         leafletOutput(
           outputId = ns("carte_belle_noe"),
-          height = 341,
-          width = 512
-        )
+          height = 400,
+          width = 600
+        ),
+        tags$br(style = "line-height: 20px"),
+        tags$p(url_map, style = "font-family: \'Bauer Bodoni Std 1\'; letter-spacing:3px; text-align: center")
+        
+        
+        
       )
     ),
     
     # Parking
     tags$br(style = "line-height: 80px"),
     
-    tags$p("Un parking est disponible sur le domaine.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-    
+     
     tags$br(style = "line-height: 80px"),
     
     # Hébergements
@@ -49,15 +54,10 @@ mod_tab_place_ui <- function(id){
       column(
         width = 6,
         tags$br(style = "line-height: 45px"),
-        tags$p("Les h\u00e9bergements sur place", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
-        tags$p("Le domaine a une capacit\u00e9 d\u2019h\u00e9bergements de 40/42 personnes.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("Les h\u00e9bergements sont compos\u00e9s de 5 chambres d\'h\u00f4tes,", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("de petites chambres dans les d\u00e9pendances, et de 2 g\u00eetes.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("Vous trouverez plus d\'informations dans l\'onglet H\u00e9bergements.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("Le tarif sera de 25 euros/nuit/personne pour une h\u00e9bergement sur place.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("La priorit\u00e9 sera donn\u00e9e \u00e0 nos copains qui picolent beaucoup (ah ah) et aux familles.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("Un espace camping avec toilettes s\u00e8ches est \u00e9galement disponible.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
-      ),
+        tags$p("Salón Principal", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
+        tags$p("Chacra Taló es un lugar ideal para realizar eventos sociales y corporativos al aire libre.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+        tags$p("Combina el campo con un luminoso salón climatizado para 200 personas.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+        ),
       
       column(
         width = 6,
@@ -81,11 +81,10 @@ mod_tab_place_ui <- function(id){
       column(
         width = 6,
         tags$br(style = "line-height: 120px"),
-        tags$p("Le salon des enfants", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
-        tags$p("Petite d\u00e9pendance de 45m\u00b2 proche des salles de r\u00e9ception et", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("\u00e9quip\u00e9e pour y recevoir les enfants sous la surveillance de baby-sitters.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("Au premier \u00e9tage, un petit dortoir \u00e9quip\u00e9 de 8 lits (une personne).", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")      )
-      
+        tags$p("Ingreso", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
+        tags$p("El ingreso vehicular se realiza a través de un magnifica boveda de árboles", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+      )
+        
     )
  
   )
@@ -104,9 +103,10 @@ mod_tab_place_server <- function(id, r_global){
       
       get_map_wedding(
         data_markers = tibble(
-          longitude = -34.37904355083765,  
-          latitude = -59.0223298386258,
+          longitude = -59.0223298386258,  
+          latitude = -34.37904355083765,
           name = "Chacra Taló"),
+          zoom = 13,
         icon_markers = "heart"
       )
                             
