@@ -59,7 +59,7 @@ mod_tab_confirmation_ui <- function(id){
         selectInput(
           inputId = ns("principal"),
           label = "Elija su opción de menú principal: ",
-          choices = c("Fideos", "Arroz")
+          choices = c("Ravioli Longo (Nuez, provolone, ricota, nuez moscada y mozzarella)", "Risotto cuatro quesos de portobellos y hongos de pino al malbec")
         ),
         fileInput(
           inputId = ns("file"), 
@@ -153,14 +153,14 @@ mod_tab_confirmation_server <- function(id, r_global){
         updateSelectInput(
           session = session,
           inputId = "principal",
-          choices = c("Menú Infantil: Milanesa con papas", "Arroz","Fideos"),
+          choices = c("Menú Infantil, Ravioli Longo (Nuez, provolone, ricota, nuez moscada y mozzarella)", "Risotto cuatro quesos de portobellos y hongos de pino al malbec"),
           selected = character(0)
         )
       } else {
         updateSelectInput(
           session = session,
           inputId = "principal",
-          choices = c("Arroz","Fideos"),
+          choices = c("Ravioli Longo (Nuez, provolone, ricota, nuez moscada y mozzarella)", "Risotto cuatro quesos de portobellos y hongos de pino al malbec"),
           selected = character(0)
         )
       }
