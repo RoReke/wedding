@@ -153,7 +153,7 @@ mod_tab_confirmation_server <- function(id, r_global){
         updateSelectInput(
           session = session,
           inputId = "principal",
-          choices = c("Menú Infantil, Ravioli Longo (Nuez, provolone, ricota, nuez moscada y mozzarella)", "Risotto cuatro quesos de portobellos y hongos de pino al malbec"),
+          choices = c("Menú Infantil", "Ravioli Longo (Nuez, provolone, ricota, nuez moscada y mozzarella)", "Risotto cuatro quesos de portobellos y hongos de pino al malbec"),
           selected = character(0)
         )
       } else {
