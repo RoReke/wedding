@@ -9,8 +9,8 @@
 app_server <- function( input, output, session ) {
   
   credentials <- data.frame(
-    user = "Ro",
-    password = "111",
+    user = c("Ro", "tuvieja"),
+    password = c("111", "tuvieja"),
     admin = FALSE,
     stringsAsFactors = FALSE
   )

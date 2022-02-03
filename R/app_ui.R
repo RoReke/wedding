@@ -18,15 +18,16 @@ app_ui <- function(request) {
                  mod_tab_couple_ui("tab_couple_ui_1")
                ),
                
-               tabPanel(
-                 title = "Confirmar mi llegada", 
-                 mod_tab_confirmation_ui("tab_confirmation_ui_1")
-               ),
                
                tabPanel(
                  title = "Lugar de la boda",
                  mod_tab_place_ui("tab_place_ui_1")
-                ),
+               ),
+               
+               tabPanel(
+                 title = "Confirmar mi llegada", 
+                 mod_tab_confirmation_ui("tab_confirmation_ui_1")
+               ),
                
                tabPanel(
                  title = "Obsequios",

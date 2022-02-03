@@ -20,7 +20,8 @@ mod_tab_couple_ui <- function(id){
              # Image fond d'écran
              tags$div(class = "landing-block background-content",
                       
-                      img(src = 'image.png')
+                      img(src = 'image.png'),
+                      style = "height: 80vh;"
                       
              ),
              
@@ -30,7 +31,7 @@ mod_tab_couple_ui <- function(id){
                                tags$h1("Guada & Ro", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:10px"),
                                tags$p("'The one where we get married...'", style = "font-family: 'MrsEavesItalic'; font-size:45px; letter-spacing:5px"),
                                tags$br(),
-                               tags$p("26 marzo 2022", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:10px")
+                               tags$p("Sábado 26 marzo 17:45 hs.", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:3px; font-size: 25px")
                       )
              ),
              
@@ -40,7 +41,7 @@ mod_tab_couple_ui <- function(id){
                ),
                style = "font-family: 'Bauer Bodoni Std 1'; 
                         font-size:20px; 
-                        letter-spacing:5px; 
+                        letter-spacing:3px; 
                         color: black;
                         text-align: center" 
              )  

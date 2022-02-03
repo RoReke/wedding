@@ -23,7 +23,7 @@ mod_tab_place_ui <- function(id){
         width = 6,
         tags$div(img(src = "www/bellenoe.jpg", height = "500px"), style = "text-align: center"),
         tags$br(style = "line-height: 20px"),
-        tags$p("Chacra Taló", style = "font-family: \'Bauer Bodoni Std 1\'; letter-spacing:3px; text-align: center")
+        tags$p("Chacra Taló", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center")
         ),
       
       column(
@@ -35,7 +35,7 @@ mod_tab_place_ui <- function(id){
           width = 600
         ),
         tags$br(style = "line-height: 20px"),
-        tags$p(url_map, style = "font-family: \'Bauer Bodoni Std 1\'; letter-spacing:3px; text-align: center")
+        tags$p(url_map, style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center")
         
         
         
@@ -52,15 +52,8 @@ mod_tab_place_ui <- function(id){
     fluidRow(
       
       column(
-        width = 6,
-        tags$br(style = "line-height: 45px"),
-        tags$p("Salón Principal", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
-        tags$p("Chacra Taló es un lugar ideal para realizar eventos sociales y corporativos al aire libre.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-        tags$p("Combina el campo con un luminoso salón climatizado para 200 personas.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
-        ),
-      
-      column(
-        width = 6,
+        offset = 4,
+        width = 8,
         tags$div(img(src = "www/bellenoe_dortoir.jpg"), 
                  style = "text-align: center"),
       )
@@ -81,8 +74,8 @@ mod_tab_place_ui <- function(id){
       column(
         width = 6,
         tags$br(style = "line-height: 120px"),
-        tags$p("Ingreso", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
-        tags$p("El ingreso vehicular se realiza a través de un magnifica boveda de árboles", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+        tags$p("Ingreso Vehicular", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
+        tags$p("El ingreso se realiza a través de una boveda de árboles", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
       )
         
     )

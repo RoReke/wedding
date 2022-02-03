@@ -22,8 +22,8 @@ mod_tab_confirmation_ui <- function(id){
     fluidRow(
       align = "center",
       tags$br(style = "line-height: 65px"),
-      h1("Confirmar asistencia", style = "font-family: \'Bauer Bodoni Std 1\'; font-size:30px; letter-spacing:5px; color: black; text-align: center"),
-      h1("Ingrese en el formulario sus elecciones", style = "font-family: \'Bauer Bodoni Std 1\'; font-size:15px; letter-spacing:2px; color: black; text-align: center"),
+      h1("Confirmar asistencia", style = "font-family: \'Bauer Bodoni Std 1\'; font-size:45px; letter-spacing:3px; color: black; text-align: center"),
+      h1("Ingrese en el formulario sus elecciones", style = "font-family: \'Bauer Bodoni Std 1\'; font-size:25px; letter-spacing:2px; color: black; text-align: center"),
       tags$br(style = "line-height: 40px"),
     ),
     
@@ -32,15 +32,17 @@ mod_tab_confirmation_ui <- function(id){
       sidebarPanel(
         
         width = 6,
+        div(
         selectizeInput(
           inputId = ns("name"),
-          label   = HTML("Nombre:"),
+          label   = "Nombre:",
           choices = NULL,
           selected  = character(0),
           options = list(
             placeholder = "Elegir nombre...",
             onInitialize = I('function() { this.setValue(""); }'),
-            maxItems    = 1
+            maxItems    = 1,
+            style = "font-size:20px;"
           )
         ),
 
@@ -66,6 +68,7 @@ mod_tab_confirmation_ui <- function(id){
           label = "Subir Certificado de Vacunación",
           multiple = FALSE,
           accept = c(".pdf")
+        ), style = "font-size:20px;"
         ),
         
         
@@ -90,11 +93,13 @@ mod_tab_confirmation_ui <- function(id){
         
         width = 6,
         
-        h1("Resumen de su información", style = "font-size:20px"),
+        h1("Resumen de su información", style = "font-size:25px"),
         
         tags$br(style = "line-height: 20px"),
-        
-        tableOutput(ns("summary_info_guest")),
+        div(
+          tableOutput(ns("summary_info_guest")),
+          style = "font-size:20px;"
+        ),
         
         tags$br(style = "line-height: 20px"),
         
