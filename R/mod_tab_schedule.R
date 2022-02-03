@@ -12,6 +12,16 @@ mod_tab_schedule_ui <- function(id){
   ns <- NS(id)
   
   tagList(
+    
+    tags$div(class = "landing-wrapper",
+             
+             # Image fond d'écran
+             tags$div(class = "landing-block background-content",
+                      
+                      img(src = 'image.png'),
+                      style = "height: 80vh;"
+                      
+             ),
  
     tags$div(class = "landing-block foreground-content",
              tags$div(class = "foreground-text",
@@ -21,11 +31,13 @@ mod_tab_schedule_ui <- function(id){
                       tags$p("esta es nuestra cuenta:  ", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:5px; text-align: center"),
                       tags$p("Alias : MIEL.ORGANO.SALA", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
                       tags$p("CBU : 0170081740000049032789", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+                      tags$p("Banco: BBVA", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
                       tags$p("Titular : Rodrigo Requejo", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
                       
              )
     )
     
+  )
   )
 }
     

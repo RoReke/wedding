@@ -9,8 +9,8 @@
 app_server <- function( input, output, session ) {
   
   credentials <- data.frame(
-    user = c("Ro", "tuvieja"),
-    password = c("111", "tuvieja"),
+    user = c("Invitados", "tuvieja"),
+    password = c("0303456", "tuvieja"),
     admin = FALSE,
     stringsAsFactors = FALSE
   )
@@ -37,7 +37,7 @@ app_server <- function( input, output, session ) {
   temp_dir <- tempdir()
   googledrive::drive_download("data_invitados", path = glue::glue(temp_dir, "\\data_invitados.csv"), overwrite = TRUE) 
   
-  data_guests <- read_csv(glue::glue(temp_dir, "\\data_invitados.csv"), 
+  data_guests <- read_csv(glue::glue(temp_dir, "\\data_invitados.csv"),
                           locale = locale(decimal_mark = ","),
                           col_types = cols(table = col_integer(),
                                            .default = col_character()))

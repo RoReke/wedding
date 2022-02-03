@@ -136,16 +136,17 @@ html,body{
 }
 
 #tab_confirmation_ui_1-send_info_guest {
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(139, 131, 203, 0.3);
     font-family: 'Bauer Bodoni Std 1';
 }
 
 #tab_confirmation_ui_1-send_info_guest:focus {
     font-family: 'Bauer Bodoni Std 1';
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(139, 131, 203, 0.3);
     border-color: rgb(116, 87, 80);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
     outline: 0 none;
+    font-size: 20px;
 }
 
 #tab_confirmation_ui_1-clean_last_info_guest {
@@ -159,6 +160,28 @@ html,body{
     outline: 0 none;
 }
 
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 20px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
 /* showNotifications */
 
 .shiny-notification {
@@ -168,4 +191,8 @@ html,body{
     background-color: rgb(235, 235, 235);
     border-color: rgb(141, 130, 183);
     border-width: medium;
+}
+
+.selectize-input { 
+    font-size: 20px; 
 }

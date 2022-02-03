@@ -23,7 +23,9 @@ mod_tab_place_ui <- function(id){
         width = 6,
         tags$div(img(src = "www/bellenoe.jpg", height = "500px"), style = "text-align: center"),
         tags$br(style = "line-height: 20px"),
-        tags$p("Chacra Taló", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center")
+        tags$p("Chacra Taló", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
+        tags$p("Calle Carlos Lemee y Ruta 6,", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 20px; letter-spacing:3px; text-align: center"),
+        tags$p("Los Cardales, Prov. Buenos Aires.", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 20px; letter-spacing:3px; text-align: center")
         ),
       
       column(
@@ -75,7 +77,7 @@ mod_tab_place_ui <- function(id){
         width = 6,
         tags$br(style = "line-height: 120px"),
         tags$p("Ingreso Vehicular", style = "font-family: \'Bauer Bodoni Std 1\'; font-size: 30px; letter-spacing:3px; text-align: center"),
-        tags$p("El ingreso se realiza a través de una boveda de árboles", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+        tags$p("El ingreso se realiza a través de una bóveda de árboles", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
       )
         
     )

@@ -55,7 +55,7 @@ mod_tab_confirmation_ui <- function(id){
         
         textInput(
           inputId = ns("special_diet"),
-          label = "Dieta especial (alergias/intolerancias alimentarias, dieta para embarazadas, etc.))",
+          label = "Dieta especial (alergias/intolerancias alimentarias, dieta para embarazadas, etc.)",
           placeholder = "Indique aquí los planes"
         ),
         selectInput(
@@ -109,22 +109,20 @@ mod_tab_confirmation_ui <- function(id){
             width = 6,
             actionButton(
               inputId = ns("clean_last_info_guest"),
-              label = "Eliminar la última información guardada"
+              label = h4("Eliminar la última información guardada")
             )
           ),
           column(
             width = 6,
             actionButton(
               inputId = ns("send_info_guest"),
-              label = "Enviar mis elecciones a los novios"
+              label = h4("Enviar mis elecciones a los novios")
             )
           )
-        )
         
-      )
       
   )
-  )
+  )))
   
 }
     
@@ -236,7 +234,7 @@ mod_tab_confirmation_server <- function(id, r_global){
       iv$enable()
       if (!iv$is_valid()) {
         showNotification(
-          ui = "Por favor complente el formulario",
+          ui = "Por favor complete el formulario",
           type = "error"
         )
         req(FALSE)

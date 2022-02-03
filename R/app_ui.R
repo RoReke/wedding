@@ -20,7 +20,7 @@ app_ui <- function(request) {
                
                
                tabPanel(
-                 title = "Lugar de la boda",
+                 title = "Ubicación",
                  mod_tab_place_ui("tab_place_ui_1")
                ),
                

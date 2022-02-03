@@ -31,7 +31,8 @@ mod_tab_couple_ui <- function(id){
                                tags$h1("Guada & Ro", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:10px"),
                                tags$p("'The one where we get married...'", style = "font-family: 'MrsEavesItalic'; font-size:45px; letter-spacing:5px"),
                                tags$br(),
-                               tags$p("Sábado 26 marzo 17:45 hs.", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:3px; font-size: 25px")
+                               tags$p("Sábado 26 marzo 17:45 hs.", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:3px; font-size: 25px"),
+                               tags$p("Los Cardales", style = "font-family: 'Bauer Bodoni Std 1'; letter-spacing:3px; font-size: 25px")
                       )
              ),
              
@@ -63,7 +64,7 @@ mod_tab_couple_server <- function(id, r_global){
 
       get_count_countdown_moments(start_moment = lubridate::now(),
                                   end_moment = "2022-03-26 18:00:00",
-                                  text = "Casamiento",
+                                  text = "Tiempo para el gran día",
                                   language = "en")
       
     })
